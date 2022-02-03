@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Transition from '../utils/Transition';
 
-import FeaturesBg from '../images/features-bg.png';
+import FeaturesBg from '../images/3.gif';
 import FeaturesElement from '../images/features-element.png';
 
 function Members() {
@@ -44,9 +44,8 @@ function Members() {
             <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 md:mt-6" data-aos="fade-right">
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8">
 {/*                 <h3 className="h3 mb-3">So, what is an NFT?</h3>
-*/}             {/* <p className="text-xl text-gray-600">Mentorship and Training directly from the Broker.</p>
-                <p className="text-xl text-gray-600">So, in short an NFT stands for NON-FUNGIBLE TOKEN. It is a one-of-a-kind, digital asset. So when you own a particular NFT. You own an asset that is yours and only yours until you decide to sell it or gift it. Much like owning a house. Your house is your house. It is uniquely yours because of how it is painted and furnished, the landscaping, the fact that it is a craftsmen's home that is 1 acre on your street. It would be impossible for someone to own a house that is 100% the same with all things being considered. As you can see there are trillions of variations.</p>
-                <p className="text-xl text-gray-600">So again, your house is unique like an NFT you own would be unique to you. Thus, creating scarcity and value. The blockchain verifies ownership like a deed verifies homeownership but in a much more efficient and instant way.</p> */}
+*/}             
+                <p className="text-xl text-gray-600">This section shows that the Principal Broker and CEO. This section shows that the Principal Broker and CEO. This section shows that the Principal Broker and CEO. This section shows that the Principal Broker and CEO. This section shows that the Principal Broker and CEO. This section shows that the Principal Broker and CEO. This section shows that the Principal Broker and CEO. </p>
               </div>
               {/* Tabs buttons */}
               {/* <div className="mb-8 md:mb-0">
@@ -114,8 +113,8 @@ function Members() {
                   leaveEnd="opacity-0 -translate-y-16"
                 >
                   <div className="relative inline-flex flex-col">
-{/*                     <img className="md:max-w-none mx-auto rounded" src={FeaturesBg} width="500" height="462" alt="Features bg" />
- */}                    {/* <img className="md:max-w-none absolute w-full left-0 transform animate-float" src={FeaturesElement} width="500" height="44" alt="Element" style={{ top: '30%' }} /> */}
+                     <img className="md:max-w-none mx-auto rounded" src={FeaturesBg} width="500" height="462" alt="Features bg" />
+                    {/* <img className="md:max-w-none absolute w-full left-0 transform animate-float" src={FeaturesElement} width="500" height="44" alt="Element" style={{ top: '30%' }} /> */}
                   </div>
                 </Transition>
                 {/* Item 2 */}
