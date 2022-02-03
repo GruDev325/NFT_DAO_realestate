@@ -34,26 +34,25 @@ function BenefitsAgent() {
         <div className="pt-12 md:pt-20">
 
           {/* Section header */}
-          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">General Benefits of Becoming an Agent</h1>
-            <p className="text-xl text-gray-600">The goal is to invest back in the agents that make up the business.
-
-</p>
+          <div className="max-w-5xl mx-auto text-center pb-12 md:pb-16">
+            <h1 className="h6 mb-4" style={{fontSize:'50px'}}>General Benefits of Becoming an Agent</h1>
+            <p className="text-xl text-gray-600">The goal is to invest back in the agents that make up the business.</p>
           </div>
 
           {/* Section content */}
           <div className="md:grid md:grid-cols-12 md:gap-6">
 
             {/* Content */}
-            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 md:mt-6" data-aos="fade-right">
+            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6 md:mt-6" data-aos="fade-right">
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8">
 {/*                 <h3 className="h3 mb-3">So, what is an NFT?</h3>
 */}             
-              <p className="text-xl text-gray-600">  Mentorship and Training directly from the Broker. </p>
-             <p className="text-xl text-gray-600">  “Unique” Training Guide and Weekly videos. </p>
-             <p className="text-xl text-gray-600">  Guaranteed closings through Brokerage model program. </p>
-             <p className="text-xl text-gray-600">  Access to company funds. </p>
-             <p className="text-xl text-gray-600">  Become a part of history. </p>
+              <p >  • Mentorship and Training directly from the Broker. </p>
+             <p >  • “Unique” Training Guide and Weekly videos. </p>
+             <p >  • Guaranteed closings through Brokerage model program. </p>
+             <p >  • Access to company funds. </p>
+             <p >  • Become a part of history. </p>
+             
               </div>
               {/* Tabs buttons */}
               {/* <div className="mb-8 md:mb-0">
@@ -106,7 +105,7 @@ function BenefitsAgent() {
             </div>
 
             {/* Tabs items */}
-            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1" data-aos="zoom-y-out" ref={tabs}>
+            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 mb-8 md:mb-0 md:order-1" data-aos="zoom-y-out" ref={tabs}>
               <div className="relative flex flex-col text-center lg:text-right">
                 {/* Item 1 */}
                 <Transition

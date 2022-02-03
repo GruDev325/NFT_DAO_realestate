@@ -32,21 +32,19 @@ function Unique() {
         <div className="pt-12 md:pt-20">
 
           {/* Section header */}
-          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">What makes Unique By Design Realty “Unique”</h1>
-{/*             <p className="text-xl text-gray-600">The goal is to invest back in the agents that make up the business.
-
-</p> */}
+          <div className="max-w-6xl mx-auto text-center pb-12 md:pb-16">
+            <h1 className="h6 mb-4" style={{fontSize:'50px'}}>What makes Unique By Design Realty “Unique”</h1>
+             <p className="text-xl text-gray-600">Unique things are based on something “Unique”.</p>
           </div>
 
           {/* Section content */}
           <div className="md:grid md:grid-cols-12 md:gap-6">
 
             {/* Content */}
-            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-9 md:mt-6" data-aos="fade-right">
+            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-7 md:mt-6" data-aos="fade-right">
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8">
 {/*                 <h3 className="h3 mb-3">So, what is an NFT?</h3>
-*/}             <p className="text-xl text-gray-600">First off unlike most firms we do not believe in the “stiff” way of doing business. Quite literally. We are flexible with every interaction because we believe we can help 99.9% of people in their real estate endeavors through our programs and systems.
+*/}             <p >First off unlike most firms we do not believe in the “stiff” way of doing business. Quite literally. We are flexible with every interaction because we believe we can help 99.9% of people in their real estate endeavors through our programs and systems.
 There is a single mom out there that has been saving every Dime she can to buy a home but does not know how to start. On the other hand, a married couple has been through rough times financially because her husband lost his job a couple of years back and they have had to max out their credit cards just to survive and damaged credit in the process.
 There is also young man that has been working as a Hvac tech for a couple of years out of school and instead “yolo-ying” everything he makes on video games and coffee. He has been responsibly building credit and saving money to start building wealth through homeownership. Or an executive that just got promoted at a local corporation that wants to sell her home and buy a more fitting home to match her salary. Regardless, these real-world people in these real-world examples. We just have the humility to hear them all out. That is what makes us “Unique</p>
               </div>
@@ -101,7 +99,7 @@ There is also young man that has been working as a Hvac tech for a couple of yea
             </div>
 
             {/* Tabs items */}
-            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-3 mb-8 md:mb-0 md:order-1" data-aos="zoom-y-out" ref={tabs}>
+            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-5 mb-8 md:mb-0 md:order-1" data-aos="zoom-y-out" ref={tabs}>
               <div className="relative flex flex-col text-center lg:text-right">
                 {/* Item 1 */}
                 <Transition
@@ -116,7 +114,7 @@ There is also young man that has been working as a Hvac tech for a couple of yea
                   leaveEnd="opacity-0 -translate-y-16"
                 >
                   <div className="relative inline-flex flex-col">
-                    <img className="md:max-w-none mx-auto rounded" src={FeaturesBg} width="250" height="302" alt="Features bg" />
+                    <img className="md:max-w-none mx-auto rounded" src={FeaturesBg} width="450" height="502" alt="Features bg" />
                     {/* <img className="md:max-w-none absolute w-full left-0 transform animate-float" src={FeaturesElement} width="500" height="44" alt="Element" style={{ top: '30%' }} /> */}
                   </div>
                 </Transition>

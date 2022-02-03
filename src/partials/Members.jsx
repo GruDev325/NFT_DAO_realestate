@@ -33,10 +33,8 @@ function Members() {
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">Members section</h1>
-            <p className="text-xl text-gray-600">the Principal Broker and CEO
-
-</p>
+            <h1 className="h6 mb-4" style={{fontSize:'50px'}}>Members</h1>
+            <p className="text-xl text-gray-600">The Principal Broker and CEO</p>
           </div>
 
           {/* Section content */}

@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
-import Nft1 from '../images/nft1.png';
-import Nft2 from '../images/nft2.png';
-import Nft3 from '../images/nft3.png';
+import Nft1 from '../images/1.gif';
+import Nft2 from '../images/2.gif';
+import Nft3 from '../images/3.gif';
 
 function FeaturesBlocks() {
   return (
@@ -17,10 +17,10 @@ function FeaturesBlocks() {
         <div className="py-12 md:py-20">
 
           {/* Section header */}
-          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
+          {/* <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
             <h2 className="h2 mb-4">Real Estate Agent NFTs</h2>
             <p className="text-xl text-gray-600">Here are Real Estate Agent NFTs that we are going to introduce.</p>
-          </div>
+          </div> */}
 
           {/* Items */}
           <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
@@ -40,7 +40,7 @@ function FeaturesBlocks() {
               </svg> */}
               <img className="mx-auto" src={Nft1} width="400" height="400" alt="Hero" />
               <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">NFT #1 : $500</h4>
-              <a className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0">Learn more specific benefits</a>
+              <a className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0 " href="#0" style={{borderRadius:'50px'}}>Learn more specific benefits</a>
             </div>
 
             {/* 2nd item */}
@@ -57,7 +57,7 @@ function FeaturesBlocks() {
               </svg> */}
               <img className="mx-auto" src={Nft2} width="400" height="400" alt="Hero" />
               <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">NFT #2 : $1000</h4>
-              <a className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0">Learn more specific benefits</a>
+              <a className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0" style={{borderRadius:'50px'}}>Learn more specific benefits</a>
             </div>
 
             {/* 3rd item */}
@@ -73,7 +73,7 @@ function FeaturesBlocks() {
               </svg> */}
               <img className="mx-auto" src={Nft3} width="400" height="400" alt="Hero" />
               <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">NFT #3 : $5000</h4>
-              <a className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0">Learn more specific benefits</a>
+              <a className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0" style={{borderRadius:'50px'}}>Learn more specific benefits</a>
             </div>
 
             {/* 4th item */}

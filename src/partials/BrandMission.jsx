@@ -33,20 +33,18 @@ function BrandMission() {
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">Brand Mission</h1>
-{/*             <p className="text-xl text-gray-600">The goal is to invest back in the agents that make up the business.
-
-</p> */}
+            <h1 className="h6 mb-4" style={{fontSize:'50px'}}>Brand Mission</h1>
+              <p className="text-xl text-gray-600">Here we behold brand mission</p>
           </div>
 
           {/* Section content */}
           <div className="md:grid md:grid-cols-12 md:gap-6">
 
             {/* Content */}
-            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 md:mt-6 md:order-1" data-aos="fade-right">
+            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 md:mt-6 md:order-1" data-aos="fade-left">
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8">
 {/*                 <h3 className="h3 mb-3">So, what is an NFT?</h3>
-*/}             <p className="text-xl text-gray-600">Our “common-ity” goal is to educate and help as many people as possible take part in homeownership. We are also about empowerment of each other as real estate professionals by allowing everyone's voice to be heard and talents be utilized in a decentralized manner. Our vision is to change the entire landscape of the real estate industry by using a bottom-up approach to the brokerage model using blockchain technology. Here at our firm like none other. From a rookie agent to the CEO the power to make change is the same. </p>
+*/}             <p >Our “common-ity” goal is to educate and help as many people as possible take part in homeownership. We are also about empowerment of each other as real estate professionals by allowing everyone's voice to be heard and talents be utilized in a decentralized manner. Our vision is to change the entire landscape of the real estate industry by using a bottom-up approach to the brokerage model using blockchain technology. Here at our firm like none other. From a rookie agent to the CEO the power to make change is the same. </p>
               </div>
               {/* Tabs buttons */}
               {/* <div className="mb-8 md:mb-0">
@@ -99,7 +97,7 @@ function BrandMission() {
             </div>
 
             {/* Tabs items */}
-            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 " data-aos="zoom-y-out" ref={tabs}>
+            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6 mb-8 md:mb-0 " data-aos="zoom-y-out" ref={tabs}>
               
               <div className="relative flex flex-col text-center lg:text-right">
                 {/* Item 1 */}

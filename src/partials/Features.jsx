@@ -3,6 +3,7 @@ import Transition from '../utils/Transition';
 
 import FeaturesBg from '../images/nftsymbol.png';
 import FeaturesElement from '../images/features-element.png';
+import colors from 'tailwindcss/lib/public/colors';
 
 function Features() {
 
@@ -25,7 +26,7 @@ function Features() {
     <section className="relative">
 
       {/* Section background (needs .relative class on parent and next sibling elements) */}
-      <div className="absolute inset-0 bg-white-100 pointer-events-none mb-16" aria-hidden="true"></div>
+      <div className="absolute inset-0 bg-white-100 pointer-events-none mb-12" aria-hidden="true"></div>
 {/*       <div className="absolute left-0 right-0 m-auto w-px p-px h-20 bg-gray-200 transform -translate-y-1/2"></div>
  */}
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
@@ -34,7 +35,7 @@ function Features() {
           {/* Section header */}
           {/* <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16"> */}
           <div className="mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">The Blockchain</h1>
+            <h1 className="h6 mb-4" style={{fontSize:'50px'}}>The Blockchain</h1>
             <p className="text-xl text-gray-600">It is like a club. Your NFT membership is your ticket into the world first NFT “Operated” Real Estate Brokerage. Unlike any Real Estate Brokerage at any time in history you as the Real Estate agent have a VOICE and the “power of the purse.” Your membership is exclusive as there will only be 100 NFT’s and thus only 100 NFT’s available for member Real Estate agents.</p>
           </div>
 
@@ -44,7 +45,7 @@ function Features() {
             
 
             {/* Tabs items */}
-            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-4 mb-8 md:mb-0 " data-aos="zoom-y-out" ref={tabs}>
+            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-12 lg:col-span-5 mb-8 md:mb-0 " data-aos="zoom-y-out" ref={tabs}>
               <div className="relative flex flex-col text-center lg:text-right">
                 {/* Item 1 */}
                 <Transition
@@ -68,12 +69,12 @@ function Features() {
             </div >
 
             {/* Content */}
-            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-8 md:mt-6 md:order-1" data-aos="fade-right">
+            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-12 lg:col-span-7 md:mt-6 md:order-1" data-aos="fade-left">
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8">
-                <h3 className="h3 mb-3">So, what is an NFT?</h3>
-                <p className="text-xl text-gray-600">NFTs are tokens that we can use to represent ownership of unique items. They let us tokenize things like art, videos, even real estate. They can only have one official owner at a time, and they are secured by the Ethereum blockchain – no one can modify the record of ownership or copy/paste a new NFT into existence.</p>
-                <p className="text-xl text-gray-600">So, in short an NFT stands for NON-FUNGIBLE TOKEN. It is a one-of-a-kind, digital asset. So when you own a particular NFT. You own an asset that is yours and only yours until you decide to sell it or gift it. Much like owning a house. Your house is your house. It is uniquely yours because of how it is painted and furnished, the landscaping, the fact that it is a craftsmen's home that is 1 acre on your street.</p>
-                
+                <h3 className="h6 mb-3" style={{fontSize:'30px'}}>So, what is an NFT?</h3>
+                <p>NFTs are tokens that we can use to represent ownership of unique items. They let us tokenize things like art, videos, even real estate. They can only have one official owner at a time, and they are secured by the Ethereum blockchain – no one can modify the record of ownership or copy/paste a new NFT into existence.</p>
+                <p>So, in short an NFT stands for NON-FUNGIBLE TOKEN. It is a one-of-a-kind, digital asset. So when you own a particular NFT. You own an asset that is yours and only yours until you decide to sell it or gift it. Much like owning a house. Your house is your house. It is uniquely yours because of how it is painted and furnished, the landscaping, the fact that it is a craftsmen's home that is 1 acre on your street.</p>
+                <p>It would be impossible for someone to own a house that is 100% the same with all things being considered. As you can see there are trillions of variations. So again, your house is unique like an NFT you own would be unique to you. Thus, creating scarcity and value. The blockchain verifies ownership like a deed verifies homeownership but in a much more efficient and instant way.</p>
               </div>
               
               {/* Tabs buttons */}
@@ -127,13 +128,12 @@ function Features() {
             </div>
 
             {/* Content */}
-            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-12 lg:col-span-12 md:mt-6 md:order-1" data-aos="fade-right">
+            {/* <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-12 lg:col-span-12 md:mt-6 md:order-1" data-aos="fade-right">
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8">
-                <p className="text-xl text-gray-600"> It would be impossible for someone to own a house that is 100% the same with all things being considered. As you can see there are trillions of variations. So again, your house is unique like an NFT you own would be unique to you. Thus, creating scarcity and value. The blockchain verifies ownership like a deed verifies homeownership but in a much more efficient and instant way.</p>
                 
               </div>
               
-            </div>
+            </div> */}
 
           </div >
 

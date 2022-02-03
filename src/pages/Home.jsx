@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Header from '../partials/Header';
+import MyHeader from '../partials/MyHeader';
 import HeroHome from '../partials/HeroHome';
 import Features from '../partials/Features';
 import FeaturesBlocks from '../partials/FeaturesBlocks';
@@ -15,17 +16,20 @@ import FounderBroker from '../partials/FounderBroker';
 import Newsletter from '../partials/Newsletter'; */
 import Footer from '../partials/Footer';
 
+import '../css/roadmap.css';
+
 function Home() {
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
+    <div id="backcolor" className="flex flex-col min-h-screen overflow-hidden">
 
       {/*  Site header */}
-      <Header />
+      {/* <Header /> */}
 
       {/*  Page content */}
       <main className="flex-grow">
 
         {/*  Page sections */}
+        {/* <MyHeader/> */}
         <HeroHome />
         <Features />
         <FeaturesBlocks />
