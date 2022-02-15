@@ -39,7 +39,7 @@ export default function MintSection() {
       <Flex width="100%" mt={10} justifyContent="center" alignItems="center">
         <Stack width={{ base: "100%", md: "50%" }}>
           <Stack direction="column">
-            <Text
+            {/* <Text
               textAlign="center"
               fontFamily="ClashDisplay-SemiBold"
               fontSize={{
@@ -47,7 +47,7 @@ export default function MintSection() {
               }}
             >
               Mint NFT Now!
-            </Text>
+            </Text> */}
             {/* <Progress
               value={80}
               borderRadius="10px"

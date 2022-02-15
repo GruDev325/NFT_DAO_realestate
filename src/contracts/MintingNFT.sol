@@ -1,62 +1,53 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.6;
 
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract MintingNFT is ERC721, Ownable {
-    using Counters for Counters.Counter;
-    Counters.Counter private _tokenIds;
+contract MintingNFT is ERC721Enumerable, Ownable {
 
-    uint256 private _maxSupply = 111;
+    mapping(uint256=>uint256) public prices;
+    mapping(uint256=>uint256) public maxCounts;
+    mapping(uint256=>uint256) public currentCounts;
 
-    string public _provenanceHash;
-    string public _baseURL;
-    uint256 public launchDate;
-
-
-    constructor() ERC721("MintingNFT", "PCRD") {}
-
-    function mint(uint256 count) external payable {
-        require(_tokenIds.current() < _maxSupply, "Can not mint more than max supply");
-        require(count > 0 && count <= 12, "You can mint between 1 and 12 at once");
-        require(msg.value >= count * 0.069 ether, "Insufficient payment");
-        for (uint256 i = 0; i < count; i++) {
-            _tokenIds.increment();
-            _mint(msg.sender, _tokenIds.current());
-        }
-
-        bool success = false;
-        (success,) = owner().call{value : msg.value}("");
-        require(success, "Failed to send to owner");
+    constructor() ERC721("Real Estate Agent", "REA") {        
+        prices[1] = 1.0 ether;
+        prices[2] = 0.5 ether;
+        prices[3] = 0.1 ether;
+        maxCounts[1] = 11;
+        maxCounts[2] = 50;
+        maxCounts[3] = 50;
     }
 
-    function setProvenanceHash(string memory provenanceHash) public onlyOwner {
-        _provenanceHash = provenanceHash;
+    function mint(uint256 category) public payable{		
+        require(currentCounts[category] + 1 < maxCounts[category], "Can't exceed Max Count");        
+		require(msg.value >= prices[category], "Insufficient Payment");
+        uint256 totalSupply = totalSupply();        
+        _mint(msg.sender, totalSupply + 1);
+		currentCounts[category]++;
     }
 
-
-    function setBaseURL(string memory baseURI) public onlyOwner {
-        _baseURL = baseURI;
+    function setPrice(uint256 category, uint256 newPrice) public onlyOwner 
+    {
+        prices[category] = newPrice;
     }
 
-
-    function setMaxSupply(uint256 value) public onlyOwner {
-        _maxSupply = value;
+    function setMaxCounts(uint256 category, uint256 newMaxCount) public onlyOwner 
+    {
+        maxCounts[category] = newMaxCount;
     }
 
-    function _baseURI() internal view override returns (string memory) {
-        return _baseURL;
-    }
- 
-
-    function maxSupply() public view returns (uint256) {
-        return _maxSupply;
+    function supportsInterface(bytes4 interfaceId) public view
+        override(ERC721Enumerable) returns (bool)
+    {
+        return super.supportsInterface(interfaceId);
     }
 
-
-    function totalSupply() public view returns (uint256) {
-        return _tokenIds.current();
+    function _beforeTokenTransfer(address from, address to, uint256 tokenId)
+        internal
+        override(ERC721Enumerable)
+    {
+        super._beforeTokenTransfer(from, to, tokenId);
     }
 }

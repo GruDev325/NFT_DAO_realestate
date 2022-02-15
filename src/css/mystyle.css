@@ -107,16 +107,7 @@
     margin: 10px;
     text-align: center;
 }
-#navbar2{
-    position: absolute;
-    left: 20px;
-    top: 65px;
-    right:20px;
-    background-color: rgb(255, 255, 255);
-    z-index: 99;
-    border-radius: 5px;
-    /* background-color: #F9DDD0; */
-}
+
 
 /* #footerdiv2{
     color: #F9DDD0;
@@ -136,20 +127,40 @@
 
 
 
+#members_title{
+    font-size: 50px;
+}
 
+#founderbroker_title{
+    font-size: 50px;
+}
 
+#roadmap_title{
+    font-size: 50px;
+}
 
+#unique_title{
+    font-size: 50px;
+}
 
+#brandmission_title{
+    font-size: 50px;
+}
 
+#benefitsagent_title{
+    font-size: 50px;
+}
+#benefitsutilities_title{
+    font-size: 50px;
+}
 
-
-
-
-
-
-
-
-
+#features_title{
+    font-size: 50px;
+}
+#features_text1{
+    font-size: 18px;
+    text-align: center;
+}
 
 #features_margin{
     margin-top: 50px;
@@ -160,10 +171,7 @@
 #features_title{
     text-align: center;
 }
-#features_text1{
-    font-size: 18px;
-    text-align: center;
-}
+
 #features_flex{
     display: flex;
 }
@@ -180,26 +188,22 @@
 }
 .featureblocks_container{
     margin: 25px;
-
+    background-color: #FCF0EA;
     border: #777 solid 1px;
-
 }
+
 .featureblocks_nft{
-    margin-top: 20px;
     padding: 10px;
 }
 .featureblocks_button{
-    margin: 25px;
     text-align: center;
     color: black;
     font-size: 30px;
 }
 .featureblocks_button1{
-    margin: 25px;
     padding: 12.5px;
     text-align: center;
-    background-color: blue;
-    color: white;
+    color: blue;
     border-radius:12.5px;
     display: flex;
     text-align: center;
@@ -207,6 +211,10 @@
     justify-items: center;
     align-items: center;
     justify-self: center;
+    font-size: 20px;
+}
+.featureblocks_mintbtn{
+    margin: 10px;
 }
 .featureblocks_buttoncontainer{
     justify-content: center;
@@ -370,4 +378,318 @@
     background-image: url(../images/flag.png);
     background-repeat:no-repeat;
     background-size: cover;
+}
+#benefitsagent_content{
+    padding: 20px;
+    font-size: 18px;
+}
+#brandmission_content{
+    padding: 20px;
+    font-size: 18px;
+}
+#unique_content{
+    padding: 20px;
+    font-size: 18px;
+}
+#members_content{
+    padding: 20px;
+    font-size: 18px;
+}
+
+#footer_up_left_buttons{
+    display: flex;
+}
+#footer_up_left_buttons_discord{
+    margin: 12px;
+    padding: 12px 48px;
+    background: blue;
+    color: white;
+    border-radius: 25px;
+    font-size: 24px;
+}
+#footer_up_left_buttons_opensea{
+    margin: 12px;
+    padding: 12px 48px;
+    background: blue;
+    color: white;
+    border-radius: 25px;
+    font-size: 24px;
+}
+.footer_up_left_p{
+    font-size: 36px;
+}
+#footer_up_left_p2{
+    font-size: 18px;
+}
+#footer_up{
+    display: flex;
+}
+.footer_up_right_p{
+    font-size: 36px;
+}
+#footer_up_right_buttons_buy{
+    margin: 12px;
+    padding: 12px 48px;
+    background: blue;
+    color: white;
+    border-radius: 25px;
+    font-size: 24px;
+    text-align: center;
+}
+#footer_down{
+    display: flex;
+}
+#footer_down_center{
+    display: flex;
+    width:20%;
+    align-items: center;
+    justify-content: center;
+}
+#footer_down_left{
+    width:40%;
+    text-align: center;
+    font-size: 18px;
+    padding: 30px 50px;
+}
+#footer_down_right{
+    width: 40%;
+    text-align: center;
+    font-size: 18px;
+    padding: 30px 50px;
+}
+#footer_up_center{
+    width:20%;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    
+}
+#footer_up_left{
+    width:40%;
+    padding: 30px 50px;
+}
+#footer_up_right{
+    width: 40%;
+    padding: 30px 50px;
+}
+#footer_up_center_img{
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+}
+#footer{
+    background-image: url(../images/footerback.png);
+    background-repeat:no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+#footer_down_center a{
+    padding: 10px;
+}
+
+@media only screen and (min-width:1px) and (max-width:1000px){
+    #featureblocks_flex{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+@media only screen and (min-width:1px) and (max-width:1000px){
+    #newheader_1{
+        font-size: 20px;
+    }
+    #newheader_2{
+        font-size: 32px;
+    }
+    #newheader_3{
+        font-size: 32px;
+    }
+    #newheader_4{
+        font-size: 20px;
+    }
+    #unique_total{
+        margin: 20px;
+    }
+    
+    #features_title{
+        font-size: 30px;
+    }
+    #features_text1{
+        font-size: 16px;
+    }
+    #features_margin{
+        margin: 20px;
+    }
+    #features_flex{
+        flex-direction: column;
+    }
+    #features_margin2 p{
+        font-size: 16px;
+    }
+    #featureblocks_flex{
+        flex-direction: column;
+    }
+    #benefitsutilities_total{
+        margin: 20px;
+    }
+    #benefitsutilities_title{
+        font-size: 30px;
+    }
+    #benefitsutilities_content{
+        font-size: 16px;
+    }
+    #benefitsagent_total{
+        margin: 20px;
+    }
+    #benefitsagent_title{
+        font-size: 30px;
+    }
+    #benefitsagent_subtitle{
+        font-size: 16px;
+    }
+    #benefitsagent_flex{
+        flex-direction: column;
+    }
+    #benefitsagent_content{
+        font-size: 16px;
+    }
+
+    #brandmission_total{
+        margin: 20px;
+    }
+    #brandmission_title{
+        font-size: 30px;
+    }
+    #brandmission_subtitle{
+        font-size: 16px;
+    }
+    #brandmission_flex{
+        flex-direction: column;
+    }
+    #brandmission_content{
+        font-size: 16px;
+    }
+
+    #unique_total{
+        margin: 20px;
+    }
+    #unique_title{
+        font-size: 30px;
+    }
+    #unique_subtitle{
+        font-size: 16px;
+    }
+    #unique_flex{
+        flex-direction: column;
+    }
+    #unique_content{
+        font-size: 16px;
+    }
+
+    #roadmap_total{
+        margin: 20px;
+    }
+    #roadmap_title{
+        font-size: 30px;
+    }
+    #roadmap_subtitle{
+        font-size: 16px;
+    }
+
+    #founderbroker_total{
+        margin: 20px;
+    }
+    #founderbroker_title{
+        font-size: 30px;
+    }
+    #founderbroker_subtitle{
+        font-size: 16px;
+    }
+
+    #members_total{
+        margin: 20px;
+    }
+    #members_title{
+        font-size: 30px;
+    }
+    #members_subtitle{
+        font-size: 16px;
+    }
+    #members_flex{
+        flex-direction: column;
+    }
+    #members_content{
+        font-size: 16px;
+    }
+    #features_flex{
+        align-items: center;
+    }
+    #brandmission_flex{
+        align-items: center;
+    }
+    #unique_flex{
+        align-items: center;
+    }
+    #members_flex{
+        align-items: center;
+    }
+    #footer_up{
+        display: none;
+    }
+    #footer_down{
+        flex-direction: column;
+    }
+    #footer_down_left{
+        width: 100%;
+    }
+    #footer_down_center{
+        width: 100%;
+    }
+    #footer_down_right{
+        width: 100%;
+    }
+    
+}
+
+#footer_up_center{
+    align-items: center;
+    display: flex;
+}
+#footer_up_right_p_m{
+    margin-top: 75px;
+}
+
+
+#navbar2{
+    position: absolute;
+    background-color: #F9DDD0;
+    border: #777 solid 1px;
+}
+#navbar2 ul li{
+    
+    margin: 10px;
+    z-index: 90;
+}
+
+.nft_state{
+    font-size: 30px;
+}
+.select_btn{
+    background-color: blue;
+    padding: 10px;
+    margin: 10px 90px;
+    color: white;
+    border-radius: 20px;
+}
+.select_btn_hide{
+    visibility: hidden;
+}
+.mint_hide{
+    visibility: hidden;
+}
+.mint_hide_show{
+    visibility: visible;
+    margin: 10px;
 }

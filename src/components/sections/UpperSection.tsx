@@ -28,27 +28,41 @@ import AvatarInstagram from '../../images/social4.png';
 
 import '../../css/mystyle.css';
 
-import Nft1 from '../../images/1.gif';
-import Nft2 from '../../images/2.gif';
-import Nft3 from '../../images/3.gif';
+
+
+import Menuimage from '../../images/menuimg.png';
+
+function myFunction() {
+  var x = document.getElementById("navbar2");
+  if (x.className === "mytopnav") {
+    x.className += "responsive";
+  } else {
+    x.className = "mytopnav";
+  }
+}
 
 export default function UpperSection() {
   return (
     <>
         <section id="headerback" className="relative">
+        
         <div id="unique_total" className="relative max-w-6xl mx-auto px-4 sm:px-6">
+        <div id="headerdiv">
+          <div id = "menudiv">
+            <img src={Menuimage} width={'50px'} onClick={myFunction}></img>
+          </div>
           <div id="sociallinks">
             <a className="icon" id="avatar_twitter" href="#0"  >
               <img width='40px' height='100px' src={AvatarTwitter} alt="logo"/>
             </a>
             <a className="icon" id="avatar_discord" href="#0"  >
-            <img width='40px' height='100px' src={AvatarDiscord} alt="logo"/>
+              <img width='40px' height='100px' src={AvatarDiscord} alt="logo"/>
             </a>
             <a className="icon" id="avatar_opensea" href="#0"  >
-            <img width='40px' height='100px' src={AvatarOpensea} alt="logo"/>
+              <img width='40px' height='100px' src={AvatarOpensea} alt="logo"/>
             </a>
             <a className="icon" id="avatar_instagram" href="#0"  >
-            <img width='40px' height='100px' src={AvatarInstagram} alt="logo"/>
+              <img width='40px' height='100px' src={AvatarInstagram} alt="logo"/>
             </a>
           </div>
           <div id = "navbar" className="mytopnav">
@@ -71,6 +85,18 @@ export default function UpperSection() {
                 <li><a href="#faq">Members</a></li>
               </ul>
             </div>
+          </div>
+          
+          </div>
+          <div id = "navbar2" className="mytopnav">
+              <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#intro">What is NFT</a></li>
+                <li><a href="#benefits">Benefits & Utilities</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#team">Founder & Broker</a></li>
+                <li><a href="#faq">Members</a></li>
+              </ul>
           </div>
           <div className="max-w-6xl mx-auto text-center pb-12 md:pb-16">
             <p id="newheader_1" >READY TO TAKE OVER THE REAL ESTATE BUSINESS AND NFT SPACE</p>
@@ -96,7 +122,7 @@ export default function UpperSection() {
       <div id="features_margin" className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <div className="pt-12 md:pt-20">
           <div className="mx-auto text-center pb-12 md:pb-16">
-            <h1 id="features_title" className="h6 mb-4" style={{fontSize:'50px'}}>The Blockchain</h1>
+            <h1 id="features_title" className="h6 mb-4" >The Blockchain</h1>
             <p id="features_text1" className="text-xl text-gray-600">It is like a club. Your NFT membership is your ticket into the world first NFT “Operated” Real Estate Brokerage. Unlike any Real Estate Brokerage at any time in history you as the Real Estate agent have a VOICE and the “power of the purse.” Your membership is exclusive as there will only be 100 NFT’s and thus only 100 NFT’s available for member Real Estate agents.</p>
           </div>
           <div id="features_flex" className="md:grid md:grid-cols-12 md:gap-6">
@@ -112,31 +138,7 @@ export default function UpperSection() {
     </section >
 
 
-      <section className="relative">
-      <div id="featureblocks_flex" className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
-        <div className="featureblocks_container">
-          <img className="featureblocks_nft" src={Nft1} width="400" height="400" alt="Hero" />
-          <h4 className="featureblocks_button">NFT #1 : $500</h4>
-          <div className="featureblocks_buttoncontainer">
-            <a className="featureblocks_button1 " href="#0"  >Learn more specific benefits</a>
-          </div>
-        </div>
-        <div className="featureblocks_container">
-          <img className="featureblocks_nft" src={Nft2} width="400" height="400" alt="Hero" />
-          <h4 className="featureblocks_button">NFT #2 : $1000</h4>
-          <div className="featureblocks_buttoncontainer">
-            <a className="featureblocks_button1 " href="#0"  >Learn more specific benefits</a>
-          </div>
-        </div>
-        <div className="featureblocks_container">
-          <img className="featureblocks_nft" src={Nft3} width="400" height="400" alt="Hero" />
-          <h4 className="featureblocks_button">NFT #3 : $5000</h4>
-          <div className="featureblocks_buttoncontainer">
-            <a className="featureblocks_button1 " href="#0"  >Learn more specific benefits</a>
-          </div>
-        </div>
-      </div>
-    </section>
+      
     </>
   );
 }

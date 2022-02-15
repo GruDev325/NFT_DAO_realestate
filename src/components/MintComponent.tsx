@@ -27,6 +27,10 @@ import { useAuth } from "../context/AuthUserContext";
 
 // console.log("CONTRACT_ADDRESS", CONTRACT_ADDRESS);
 
+import Nft1 from '../images/1.gif';
+import Nft2 from '../images/2.gif';
+import Nft3 from '../images/3.gif';
+
 const min = 1;
 const defaultValue = 1;
 const max = 12;
@@ -67,7 +71,7 @@ function MintComponent() {
   }, [activatingConnector, connector]);
 
   const { authUser, loading, signOut } = useAuth();
-  // const router = useRouter();
+  
   // Listen for changes on loading and authUser, redirect if needed
   React.useEffect(() => {
     !loading && authUser ? setHidden(false) : setHidden(true);
@@ -94,7 +98,7 @@ function MintComponent() {
       const instance = new web3.eth.Contract(
         // @ts-ignore
         AppContract,
-        "0x80c265244b42d2152247d795133f7F2038686D67"
+        "0x2d31D6510592eE16A1F5b6008Fd6E71c74112f3a"
       );
 
       setAccounts(accounts);
@@ -149,21 +153,7 @@ function MintComponent() {
       if (!account)
         throw new Error(`No account selected. Try reauthenticating`);
       const amount = (0.069 * (count as any)).toFixed(3);
-      // const nonceResponse = await fetch(
-      //   `/pro-camel-riders/us-central1/getNonce?address=${account}`
-      // );
-      // const data = await nonceResponse.json();
-
-      // const signature = await web3!.eth.personal.sign(
-      //   `I am signing my one-time nonce: ${data.nonce}`,
-      //   account,
-      //   "" // MetaMask will ignore the password argument here
-      // );
-
-      // const verificationResponse = await fetch(
-      //   `/pro-camel-riders/us-central1/verifyAddress?address=${account}&signature=${signature}`
-      // );
-      // const verificationData = await verificationResponse.json();
+    
       const value = web3.utils.toWei(amount, "ether");
 
       const gas = (count) => {
@@ -185,22 +175,33 @@ function MintComponent() {
         }
       };
 
-      await instance.methods.mint(count).send({
-        from: account,
-        value,
-        gas: gas(count),
-      });
-      // const gas = await tx.estimateGas({ from: account });
-      // const gasPrice = await web3.eth.getGasPrice();
-      // const data = tx.encodeABI();
-      // const nonce = await web3.eth.getTransactionCount(account);
+   
+      const myvalue = (category) => {
+        switch (true) {
+          case category == 3:
+            return web3.utils.toWei("0.01", "ether");
+          case category == 2:
+            return web3.utils.toWei("0.02", "ether");
+          case category == 1:
+            return web3.utils.toWei("0.03", "ether");
+        }
+      };
 
-      // console.log({
-      //   gas,
-      //   gasPrice,
-      //   nonce,
-      //   data,
-      // });
+      const gasfee = (category) => {
+        switch (true) {
+          case category == 3:
+            return "250000";
+          case category == 2:
+            return "500000";
+          case category == 1:
+            return "750000";
+        }
+      };
+      await instance.methods.mint(category).send({
+        from: account,
+        value: myvalue(category),
+        gas: gasfee(category),
+      });
     } catch (error) {
       console.log(error);
     }
@@ -209,10 +210,7 @@ function MintComponent() {
   const connect = async () => {
     try {
       console.log("Connecting", connected);
-      // Verify address is in Presales.
-      // await
-      //Retrieve current nonce.
-      // After presales.
+     
       setActivatingConnector(currentConnector);
       activate(connectorsByName["Injected"]);
     } catch (error) {
@@ -229,36 +227,40 @@ function MintComponent() {
     <Flex width="100%" mt={10} justifyContent="center" alignItems="center">
       <Stack width="100%" align="center">
         <Stack
-          width={{ base: "100%", md: "40%" }}
-          direction={{ base: "column", md: "row" }}
+          width={{ base: "100%", md: "120%" }}
+          direction={{ base: "column", md: "column" }}
           textAlign="center"
           align="center"
         >
-          <NumberInput
-            variant="outline"
-            placeholder="Amount"
-            defaultValue={1}
-            min={min}
-            max={max}
-            onChange={(e) => setCount(Number(e))}
-            size="lg"
-          >
-            <NumberInputField readOnly textAlign="center" />
-            <NumberInputStepper>
-              <NumberIncrementStepper />
-              <NumberDecrementStepper />
-            </NumberInputStepper>
-          </NumberInput>
-          {!connected && (
+    <section className="relative">
+      <div id="featureblocks_flex" className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
+        <div className="featureblocks_container" >
+        <div className="featureblocks_buttoncontainer">
+            <a className="featureblocks_button1 " href="#0"  >Learn more ...</a>
+          </div>
+          <img className="featureblocks_nft" src={Nft1} width="400" height="400" alt="Hero" />
+          <h4 className="featureblocks_button">NFT #1 : $500</h4>
+          
+          <div className="featureblocks_mintsupply">
+            <p id="bronze_state" className="nft_state">0/50</p>
+          </div>
+          
+          <div className="select_btn" id="select_bronze" onClick={selectBronze}>
+            Select
+          </div>
+
+          <div id="bronze_mint" className="mint_hide">
+          {!connected &&(
             <Button
               size={"lg"}
               fontWeight={"normal"}
-              fontFamily="Satoshi-Medium"
-              borderRadius="3px"
+              borderRadius="20px"
               fontSize="16px"
-              background="linear-gradient(97.36deg, #7234F5 0%, #3D70F0 100%), linear-gradient(97.36deg, #00A272 0%, #00A298 100%), #00A272"
+              background="white"
+              color="blue"
               // disabled={disabled}
               onClick={connect}
+              border="blue solid 1px"
             >
               Connect Wallet
             </Button>
@@ -267,26 +269,220 @@ function MintComponent() {
             <Button
               size={"lg"}
               fontWeight={"normal"}
-              fontFamily="Satoshi-Medium"
-              borderRadius="3px"
+              borderRadius="20px"
               fontSize="16px"
-              background="linear-gradient(97.36deg, #7234F5 0%, #3D70F0 100%), linear-gradient(97.36deg, #00A272 0%, #00A298 100%), #00A272"
+              background="white"
+              color="blue"
               onClick={mint}
+              border="blue solid 1px"
             >
-              Mint
+              Mint Selected NFT
             </Button>
           )}
-          {/* <Box height="200px" background="red" width="200px">
-            {JSON.stringify(hidden)}: Here
-            {JSON.stringify(authUser)}: user
-            {JSON.stringify(loading)}: user
-            {JSON.stringify(account)}: account
-            {JSON.stringify(accounts)}: accounts
-          </Box> */}
+          </div>
+
+        </div>
+        <div className="featureblocks_container">
+        <div className="featureblocks_buttoncontainer">
+            <a className="featureblocks_button1 " href="#0"  >Learn more ...</a>
+          </div>
+          <img className="featureblocks_nft" src={Nft2} width="400" height="400" alt="Hero" />
+          <h4 className="featureblocks_button">NFT #2 : $1000</h4>
+          
+          <div className="featureblocks_mintsupply">
+            <p id="silver_state" className="nft_state">0/50</p>
+          </div>
+
+          <div id="silver_NFT_mint" className="featureblocks_mintbtn">
+            
+          <div className="select_btn" id="select_silver" onClick={selectSilver}>
+            Select
+          </div>
+          
+          <div id="silver_mint" className="mint_hide">
+          {!connected &&(
+            <Button
+              size={"lg"}
+              fontWeight={"normal"}
+              borderRadius="20px"
+              fontSize="16px"
+              background="white"
+              color="blue"
+              // disabled={disabled}
+              onClick={connect}
+              border="blue solid 1px"
+            >
+              Connect Wallet
+            </Button>
+          )}
+          {active && (
+            <Button
+              size={"lg"}
+              fontWeight={"normal"}
+              borderRadius="20px"
+              fontSize="16px"
+              background="white"
+              color="blue"
+              onClick={mint}
+              border="blue solid 1px"
+            >
+              Mint Selected NFT
+            </Button>
+          )}
+          </div>
+          
+          </div>
+        </div>
+        <div className="featureblocks_container">
+        <div className="featureblocks_buttoncontainer">
+            <a className="featureblocks_button1 " href="#0"  >Learn more ...</a>
+          </div>
+          <img className="featureblocks_nft" src={Nft3} width="400" height="400" alt="Hero" />
+          <h4 className="featureblocks_button">NFT #3 : $5000</h4>
+          
+          <div className="featureblocks_mintsupply">
+            <p id="gold_state" className="nft_state">1/11</p>
+          </div>
+
+          <div id="gold_NFT_mint" className="featureblocks_mintbtn">
+          
+          <div className="select_btn" id="select_gold" onClick={selectGold}>
+            Select
+          </div>
+
+
+          <div id="gold_mint" className="mint_hide">
+          {!connected &&(
+            <Button
+              size={"lg"}
+              fontWeight={"normal"}
+              borderRadius="20px"
+              fontSize="16px"
+              background="white"
+              color="blue"
+              // disabled={disabled}
+              onClick={connect}
+              border="blue solid 1px"
+            >
+              Connect Wallet
+            </Button>
+          )}
+          {active && (
+            <Button
+              size={"lg"}
+              fontWeight={"normal"}
+              borderRadius="20px"
+              fontSize="16px"
+              background="white"
+              color="blue"
+              onClick={mint}
+              border="blue solid 1px"
+            >
+              Mint Selected NFT
+            </Button>
+          )}
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
         </Stack>
       </Stack>
     </Flex>
   );
+}
+
+var category = 0;
+
+function selectBronze() {
+  var x = document.getElementById("select_bronze");
+  if(x.innerHTML=='Unselect'){
+    x.innerHTML='Select';
+
+    var a = document.getElementById("select_gold");
+    var b = document.getElementById("select_silver");
+    a.className = "select_btn";
+    b.className = "select_btn";
+
+    var c = document.getElementById("bronze_mint");
+    c.className = "mint_hide";
+
+    category = 0;
+  }else{
+    x.innerHTML='Unselect';
+
+    var a = document.getElementById("select_gold");
+    var b = document.getElementById("select_silver");
+    a.className += "_hide";
+    b.className += "_hide";
+
+    var c = document.getElementById("bronze_mint");
+    c.className += "_show";
+
+    category = 3;
+  }
+}
+
+function selectSilver() {
+  var x = document.getElementById("select_silver");
+  if(x.innerHTML==='Unselect'){
+    x.innerHTML='Select';
+    
+    var a = document.getElementById("select_gold");
+    var b = document.getElementById("select_bronze");
+    a.className = "select_btn";
+    b.className = "select_btn";
+
+    var c = document.getElementById("silver_mint");
+    c.className = "mint_hide";
+
+    category = 0;
+
+  }else{
+    x.innerHTML='Unselect';
+
+    var a = document.getElementById("select_gold");
+    var b = document.getElementById("select_bronze");
+    a.className += "_hide";
+    b.className += "_hide";
+
+
+    var c = document.getElementById("silver_mint");
+    c.className += "_show";
+
+    category = 2;
+  }
+}
+
+function selectGold() {
+  var x = document.getElementById("select_gold");
+  if(x.innerHTML=='Unselect'){
+    x.innerHTML='Select';
+
+    var a = document.getElementById("select_silver");
+    var b = document.getElementById("select_bronze");
+    a.className = "select_btn";
+    b.className = "select_btn";
+
+    var c = document.getElementById("gold_mint");
+    c.className = "mint_hide";
+
+    category = 0;
+
+  }else{
+    x.innerHTML='Unselect';
+
+    var a = document.getElementById("select_silver");
+    var b = document.getElementById("select_bronze");
+    a.className += "_hide";
+    b.className += "_hide";
+
+    var c = document.getElementById("gold_mint");
+    c.className += "_show";
+
+    category = 1;
+  }
 }
 
 export default MintComponent;
